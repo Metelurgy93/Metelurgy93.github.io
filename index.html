@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="person_1.jpg" />
+<title>Spectre Attack</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap core CSS -->
+   
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+<style>
+body {font-family: "Lato", sans-serif;}
+
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+
+#Home {background-color:red;}
+#News {background-color:green;}
+#Contact {background-color:blue;}
+#About {background-color:orange;}
+</style>
+</head>
+
+
+<script>
+function openHome(cityName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(cityName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+</script>
+
+
+
+
+
+<script src="jquery-3.2.1.min.js"></script>
+<script src="timer.js"></script>
+<script src="spectre.js"></script>
+
+
+
+
+<body>
+
+<div id="Home" class="tabcontent">
+  <h1>Home</h1>
+  <p>Spectre Attack Homepage</p>
+</div>
+
+<div id="News" class="tabcontent">
+  <h1>News</h1>
+  <p>Spectre Attack Homepage</p> 
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h1>Contact</h1>
+  <p>Spectre Attack Homepage</p>
+</div>
+
+<div id="About" class="tabcontent">
+  <h1>About</h1>
+  <p>Spectre Attack Homepage</p>
+</div>
+
+<button class="tablink" onclick="openHome('Home', this, 'red')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openHome('News', this, 'green')">News</button>
+<button class="tablink" onclick="openHome('Contact', this, 'blue')">Contact</button>
+<button class="tablink" onclick="openHome('About', this, 'orange')">About</button>
+
+
+
+
+<h2>Spectre Login Form</h2>
+<div class="col-md-6">
+
+    <div id="Panellogin_form" class=" card primary">
+    <div class="card-header">   <i class="fa fa-user" aria-hidden="true"></i> Sign in (Victim User)</div>
+    <div class="card-body">
+<form action="" class="form-horizontal" enctype="multipart/form-data" style="max-width:500px;margin:auto">
+  <div class="imgcontainer">
+      <img src="person_1.jpg" alt="Avatar" class="avatar">
+  </div>
+  
+  <div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <input class="input-field" type="text" placeholder="Email" name="email">
+  </div>
+  
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" id = "inputPassword" type="password" placeholder="Password" name="psw">
+	<small id="passwordHelp" class="form-text text-muted"></small>
+
+  </div>
+  
+  <button class="btn btn-primary" type="button" name="signin" id="signin">Login</button>
+  <label>
+  <input type="checkbox" checked="checked" name="remember"> Remember me
+  </label>
+</form>
+ </div>
+</div>
+</div>
+  
+  
+</div>
+
+<script type="text/javascript">
+	
+	$("#signin").click(function(){
+    $( "#progress" ).empty();
+		var input = document.getElementById("inputPassword").value;
+    //alert("The paragraph was clicked.");
+    main(input);
+	
+});
+</script>
+<br>
+<br>
+<div  id="attacker" class="col-md-6">
+
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">  <div class="card default">
+    <div class="card-header" id="headingcollapse_info">
+    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_info" aria-expanded="true" aria-controls="collapse_info" class="">
+     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Attacker Side 
+    </a>
+    </div>
+    <div id="collapse_info" class="collapse show" role="tabpanel" aria-labelledby="headingcollapse_info" style="">
+    <div  id="progress" class="card-body">
+      
+    </div>
+    </div>
+    </div>  
+	</div>
+  
+</div>
+
+</body>
+</html>
